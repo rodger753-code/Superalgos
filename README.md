@@ -17,6 +17,59 @@ All procedures are the same for Windows, Linux, or Mac OS. Raspberry Pi terminal
 
 
 
+# Docker Deployments
+
+Docker container images can be found at https://github.com/users/Superalgos/packages/container/package/superalgos
+
+If you wish to run Superalgos over docker platform, follow these steps.
+
+## 1. Install Docker
+
+Follow the link to [install docker](https://docs.docker.com/engine/install/).
+
+## 2. Install Git
+```
+sudo apt-get install wget git-core
+```
+
+## 3. Grant write permissions on /opt/
+```
+sudo chmod 777 /opt/
+```
+
+## 4. Clone superalgos
+```
+cd /opt/
+git clone https://github.com/rodger753-code/Superalgos
+```
+
+## 5. Run the Superalgos docker container.
+
+```
+docker run \
+  -d \
+  --name superalgos \
+  -p 18041:18041 \
+  -p 34248:34248 \
+  -v /opt/superalgos:/opt/superalgos \
+  rodger753/docker-superalgos
+```
+
+## 6. Now you can Access Superalgos
+
+Now you can access to the Superalgos UI at http://127.0.0.1:34248
+
+To see console logs you can use `docker logs superalgos -f`
+
+When you're done just exec `docker kill superalgos`
+
+**Note:** This has not been extensively tested yet. If you run into troubles, please contact us at the [Superalgos Support Group](https://t.me/superalgossupport).
+
+# Deployments on any Machine
+This steps will guide you through the process of installing Superalgos in a Windows, Linux or Mac OS, and Raspberry Pi.
+
+All procedures are the same for Windows, Linux, or Mac OS. Raspberry Pi terminal commands have been included for ease of use.
+
 # Pre-Requisites
 
 ## 1. Node JS Installation
@@ -239,38 +292,6 @@ Once the app finishes loading, an interactive tutorial takes you by the hand and
 ![welcome-tutorial-00](https://user-images.githubusercontent.com/13994516/107038771-4a6bf100-67bd-11eb-92e0-353525a972a9.gif)
 
  **NOTE:** The tutorial uses Binance or Binance US as the exchange of choice. If you don’t have an account with Binance or Binance US, you will still be able to follow 100% of the tutorial. When you get to the live trading section, keep going even if you don't intend to run the session. You may learn how to work with other exchanges later on.
-
-# Docker Deployments
-
-Docker container images can be found at https://github.com/users/Superalgos/packages/container/package/superalgos
-
-If you wish to run Superalgos over docker platform, follow these steps.
-
-## 1. Install Docker
-
-Follow the link to [install docker](https://docs.docker.com/engine/install/).
-
-## 2. Run
-
-You will need to create local storage directories beforehand, by example with `mkdir Data-Storage Log-Files My-Workspaces`
-
-```
-docker run \
-  -d \
-  --name superalgos \
-  -p 18041:18041 \
-  -p 34248:34248 \
-  -v /opt/superalgos:/opt/superalgos \
-  rodger753/docker-superalgos
-```
-
-Now you can access to the Superalgos UI at http://127.0.0.1:34248
-
-To see console logs you can use `docker logs superalgos -f`
-
-When you're done just exec `docker kill superalgos`
-
-**Note:** This has not been extensively tested yet. If you run into troubles, please contact us at the [Superalgos Support Group](https://t.me/superalgossupport).
 
 # What is Superalgos?
 
