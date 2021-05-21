@@ -1,6 +1,3 @@
-# Its a fork of the Superalgos Project:
-https://github.com/Superalgos/Superalgos
-
 # Superalgos Beta 9
 
 Superalgos is not just another open-source project. We are an open and welcoming community devised, nurtured, and incentivized with the project's native <a href="https://superalgos.org/token-overview.shtml" target="_blank">Superalgos (SA) token</a> to grow into a massive trading collaboration. You will notice the difference as soon as you join the [Telegram Community Group](https://t.me/superalgoscommunity) or the new [Discord Server](https://discord.gg/CGeKC6WQQb).
@@ -58,6 +55,9 @@ docker run \
 ## 6. Now you can Access Superalgos
 
 Now you can access to the Superalgos UI at http://127.0.0.1:34248
+
+**IMPORTANT:**
+If superalgos doesn't start most likely the problem lays in the -v volume mapping line, make your mapping to the right Directory and that you have done all the previous 5 steps.
 
 To see console logs you can use `docker logs superalgos -f`
 
@@ -468,3 +468,8 @@ Luis Fernando Molina, Julian Molina, Andreja Cobeljic, Ira Miller, matbenitez, b
 # License
 
 Superalgos is open-source software released under [Apache License 2.0](LICENSE).
+
+This Docker container is a fork of Superalgos/Superalgos
+===
+Credits to Superalgos, since this image was created based on the following git:
+https://github.com/Superalgos/Superalgos
