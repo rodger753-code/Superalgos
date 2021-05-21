@@ -1,3 +1,6 @@
+# Its a fork of the Superalgos Project:
+https://github.com/Superalgos/Superalgos
+
 # Superalgos Beta 9
 
 Superalgos is not just another open-source project. We are an open and welcoming community devised, nurtured, and incentivized with the project's native <a href="https://superalgos.org/token-overview.shtml" target="_blank">Superalgos (SA) token</a> to grow into a massive trading collaboration. You will notice the difference as soon as you join the [Telegram Community Group](https://t.me/superalgoscommunity) or the new [Discord Server](https://discord.gg/CGeKC6WQQb).
@@ -254,14 +257,11 @@ You will need to create local storage directories beforehand, by example with `m
 ```
 docker run \
   -d \
-  --rm \
   --name superalgos \
   -p 18041:18041 \
   -p 34248:34248 \
-  -v $(pwd)/Data-Storage:/app/Data-Storage \
-  -v $(pwd)/Log-Files:/app/Log-Files \
-  -v $(pwd)/My-Workspaces:/app/My-Workspaces \
-  ghcr.io/superalgos/superalgos:latest
+  -v /opt/superalgos:/opt/superalgos \
+  rodger753/docker-superalgos
 ```
 
 Now you can access to the Superalgos UI at http://127.0.0.1:34248
